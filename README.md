@@ -1,5 +1,5 @@
 # Microserviços
-Esse projeto tem como objetivo inicial demonstrar o uso do Spring boot + spring cloud + mongodb + Junit + Eureka.
+Esse projeto tem como objetivo inicial demonstrar o uso do Spring boot + spring cloud + mongodb + Junit + Eureka...
 
 ## Descrição do problema
 Descreve-se a seguir um cenário fictício com um problema específico a ser resolvido. 
