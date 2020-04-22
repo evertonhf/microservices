@@ -5,7 +5,7 @@ Esse projeto tem como objetivo inicial demonstrar o uso do Spring boot + spring 
 Descreve-se a seguir um cenário fictício com um problema específico a ser resolvido. 
 
 Uma empresa de desenvolvimento de software trabalha com soluções computacionais voltadas para UI - Users interface. Para atender uma demanda do mercado, necessita de uma solução backend que permita gerenciar "modelos/entidades persistentes" dinâmicamente. Os modelos serão representados através de um(a) metadata/estrutura que defina as características do modelo, tal como o "nome" e suas "propriedades", como pode ser visto a seguir.
- ````
+```
  {
     "resource": "nome do modelo",
     "properties":
@@ -18,7 +18,7 @@ Uma empresa de desenvolvimento de software trabalha com soluções computacionai
             ...
     ]
 }
-´´´
+```
 **Resource"" representa o nome do modelo/classe.
 **properties"" representas as propriedades/atributos. Cada propriedade consta de um "name", que representa o nome da propriedade/atributo; "type" que representa o tipo de dados, sendo informado o caminho completo; e "required" que represanta true/false indicando se o campo é obrigatório ou não.
 
