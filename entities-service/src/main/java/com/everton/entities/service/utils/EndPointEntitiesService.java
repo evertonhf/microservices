@@ -3,9 +3,11 @@ package com.everton.entities.service.utils;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,13 +17,12 @@ import com.everton.entities.service.entities.Property;
 @Component
 public class EndPointEntitiesService {
 
-	private static final String LOCALHOST = "http://entities-template-service/";
+	private static final String entitiesTemplateServiceName = "entities-template-service";
 
 	@Autowired
-	private DiscoveryClient discoveryClient;
+	private LoadBalancerClient loadBalancerClient;
 
-	@Autowired
-	private RestTemplate restTemplate;
+	private RestTemplate restTemplate = new RestTemplate();
 
 	/**
 	 * Get Resource from Service
@@ -30,7 +31,13 @@ public class EndPointEntitiesService {
 	 * @return Template
 	 */
 	public Entity getEntityFromService(String resource) throws ResourceNotFound {
-		Entity entity = restTemplate.getForObject(LOCALHOST + resource, Entity.class);
+
+		ServiceInstance servInstance = loadBalancerClient.choose(entitiesTemplateServiceName);
+		String baseUrl = servInstance.getUri().toString();
+		baseUrl = baseUrl + "/" + resource;
+
+		Entity entity = restTemplate.getForObject(baseUrl, Entity.class);
+
 		if (entity == null) {
 			throw new ResourceNotFound("Recurso inexistente!");
 		}

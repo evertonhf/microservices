@@ -31,7 +31,7 @@ Uma vez fornecido as características do modelo, tem-se a necessidade de persist
 ```
 
 ##Objetivos a serem alcançados
-Espera-se como solução um back-end que permita gerenciar(CRUD - CREATE, READ, UPDATE, DELETE) tanto dos modelos, quanto as persistências dos dados em relação aos modelos criados.
+Espera-se como solução um back-end que permita gerenciar(CRUD - CREATE, READ, UPDATE, DELETE) tanto os modelos, quanto as persistências dos dados em relação aos modelos criados.
 
 ## Solução proposta
 Para resolver o problema proposto serão desenvolvidos 2 back-ends independentes. O back-end "entities-structure", que permitira gerenciar os modelos dinâmicos; e "entities-service" que permitirá gerenciar a persistências dos dados em relação ao modelos. Ambos serão microserviços independentes que se comunicam entre si, e para utiliza-los, basta consumi-los por uma UI. 
