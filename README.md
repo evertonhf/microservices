@@ -18,7 +18,7 @@ Uma empresa de desenvolvimento de software trabalha com soluções computacionai
             ...
     ]
 }
-```
+´´´
 **Resource"" representa o nome do modelo/classe.
 **properties"" representas as propriedades/atributos. Cada propriedade consta de um "name", que representa o nome da propriedade/atributo; "type" que representa o tipo de dados, sendo informado o caminho completo; e "required" que represanta true/false indicando se o campo é obrigatório ou não.
 
