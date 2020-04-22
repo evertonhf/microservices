@@ -3,6 +3,9 @@ package com.everton.entities.service.utils;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -12,7 +15,10 @@ import com.everton.entities.service.entities.Property;
 @Component
 public class EndPointEntitiesService {
 
-	private static final String LOCALHOST = "http://ENTITIES-TEMPLATE-SERVICE/";
+	private static final String LOCALHOST = "http://entities-template-service/";
+
+	@Autowired
+	private DiscoveryClient discoveryClient;
 
 	@Autowired
 	private RestTemplate restTemplate;

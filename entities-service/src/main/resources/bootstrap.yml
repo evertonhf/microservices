@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: entities-service
+  cloud:
+    config:
+      uri:
+      - http://localhost:8760

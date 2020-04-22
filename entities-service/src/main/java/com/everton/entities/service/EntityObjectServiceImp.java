@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.everton.entities.service.entities.EntityObject;
@@ -17,6 +16,7 @@ import com.everton.entities.service.utils.ValidateFieldsException;
 @Service
 public class EntityObjectServiceImp implements IEntityObjectService {
 
+	
 	@Autowired
 	EntityObjectRepository entityObjectRepository;
 

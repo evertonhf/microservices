@@ -10,10 +10,10 @@ import java.util.Set;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
-import org.junit.runner.RunWith;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -61,9 +61,9 @@ class EntitiesStructureApplicationTests {
 		assertNotNull(entityTmp.getId());
 		assertEquals(resource, entityTmp.getResource());
 
-		assertNotNull(entity02);
-		assertNotNull(entity02.getId());
-		assertEquals(resource02, entity02.getResource());
+		assertNotNull(entityTmp02);
+		assertNotNull(entityTmp02.getId());
+		assertEquals(resource02, entityTmp02.getResource());
 	}
 
 	@Test
